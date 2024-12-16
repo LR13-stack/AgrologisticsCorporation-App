@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Seller extends Model
+{
+    protected $table = 'sellers';
+
+    protected $fillable = [
+        'name',
+        'document_number',
+        'address',
+        'phone',
+        'ubigeo_id',
+    ];
+
+    public function ubigeo()
+    {
+        return $this->belongsTo(Ubigeo::class);
+    }
+}
